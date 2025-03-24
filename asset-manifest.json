@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/portV-2/static/css/main.59dc8ab0.css",
+    "main.js": "/portV-2/static/js/main.751866ad.js",
+    "static/js/453.acca0757.chunk.js": "/portV-2/static/js/453.acca0757.chunk.js",
+    "index.html": "/portV-2/index.html",
+    "main.59dc8ab0.css.map": "/portV-2/static/css/main.59dc8ab0.css.map",
+    "main.751866ad.js.map": "/portV-2/static/js/main.751866ad.js.map",
+    "453.acca0757.chunk.js.map": "/portV-2/static/js/453.acca0757.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.59dc8ab0.css",
+    "static/js/main.751866ad.js"
+  ]
+}
