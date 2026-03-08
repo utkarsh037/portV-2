@@ -1,0 +1,11 @@
+footer {
+  
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Spans the full width */
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000; /* Ensures it stays above other content */
+}

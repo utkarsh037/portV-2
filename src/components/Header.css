@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap");
+
+/* ── Base Header ─────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: white;
+
+  /* Default: solid dark */
+  background: rgba(10, 10, 15, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+}
+
+/* Glassmorphism kicks in after scroll */
+.header--scrolled {
+  background: rgba(10, 10, 20, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 0 30px rgba(0, 240, 255, 0.08),
+    0 4px 24px rgba(0, 0, 0, 0.5),
+    inset 0 -1px 0 rgba(0, 240, 255, 0.15);
+  padding: 12px 40px;
+}
+
+/* ── Scroll Progress Bar ─────────────────────────────────────────────────── */
+.scroll-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00f0ff, #ff00ff, #7c3aed);
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00ff;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ── Logo / Title ────────────────────────────────────────────────────────── */
+.header-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  white-space: nowrap;
+  text-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+  transition: text-shadow 0.3s ease;
+}
+
+.header-title:hover {
+  text-shadow: 0 0 25px rgba(0, 240, 255, 0.8), 0 0 50px rgba(255, 0, 255, 0.3);
+}
+
+.title-bracket {
+  color: #00f0ff;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+/* ── Nav Links ───────────────────────────────────────────────────────────── */
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.nav-link {
+  position: relative;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: color 0.3s ease, background 0.3s ease;
+  display: block;
+}
+
+/* Underline slide effect */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 14px;
+  right: 14px;
+  height: 1px;
+  background: linear-gradient(90deg, #00f0ff, #ff00ff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 6px #00f0ff;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: rgba(0, 240, 255, 0.06);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active link */
+.nav-link.active-link {
+  color: #00f0ff;
+  background: rgba(0, 240, 255, 0.08);
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.6);
+}
+
+.nav-link.active-link::after {
+  transform: scaleX(1);
+}
+
+/* ── Terminal Button ─────────────────────────────────────────────────────── */
+.terminal-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: transparent;
+  border: 1px solid rgba(0, 240, 255, 0.5);
+  color: #00f0ff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.1), inset 0 0 10px rgba(0, 240, 255, 0.03);
+}
+
+.terminal-btn:hover {
+  background: rgba(0, 240, 255, 0.12);
+  border-color: #00f0ff;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 15px rgba(0, 240, 255, 0.08);
+  transform: translateY(-1px);
+}
+
+.terminal-btn-icon {
+  font-size: 11px;
+  color: #ff00ff;
+  font-weight: bold;
+  animation: blink-cursor 1s steps(1) infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Hamburger Icon ──────────────────────────────────────────────────────── */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #00f0ff;
+  transition: transform 0.3s ease, color 0.3s ease;
+  z-index: 1001;
+}
+
+.menu-icon:hover {
+  color: #ff00ff;
+  transform: scale(1.1);
+}
+
+/* ── Mobile ──────────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .header--scrolled {
+    padding: 12px 20px;
+  }
+
+  .header-title {
+    font-size: 14px;
+  }
+
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(8, 8, 18, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  .header-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    padding: 20px 24px;
+    gap: 4px;
+  }
+
+  .header-nav li {
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    padding: 12px 16px;
+    width: 100%;
+  }
+
+  .terminal-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}

@@ -1,0 +1,97 @@
+/* General Container */
+.nasa-apod {
+  text-align: center;
+  padding: 30px;
+  background: radial-gradient(circle at 20% 20%, #0d0d1f, #000000 90%);
+  color: #00ffe7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Heading - with Glow Effect */
+.nasa-apod h1, .nasa-apod h2 {
+  font-size: 2em;
+  color: #00ffe7;
+  text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7, 0 0 40px #0ff;
+  margin-top: 15px;
+  animation: pulse 2s infinite;
+}
+
+/* About heading specifically */
+.about-heading {
+  color: #fff;
+  text-shadow: 0 0 10px #fff, 0 0 20px #0ff;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Explanation Text */
+.nasa-apod p {
+  font-size: 1.1em;
+  color: #b3f6ff;
+  margin-top: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border: 1px solid #0ff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #0ff;
+  backdrop-filter: blur(4px);
+}
+
+/* Image with hover zoom and glow */
+.apod-image {
+  margin-top: 30px;
+  max-width: 80%;
+  border: 2px solid #00ffe7;
+  box-shadow: 0 0 15px #00ffe7, 0 0 30px #0ff;
+  border-radius: 15px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.apod-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffe7, 0 0 50px #0ff;
+}
+
+/* Video iframe styling */
+iframe {
+  margin-top: 20px;
+  border: 2px solid #00ffe7;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ffe7, 0 0 30px #0ff;
+}
+
+/* Loading & Error */
+.loading, .error {
+  font-size: 1.5em;
+  margin-top: 50px;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7, 0 0 40px #0ff;
+  }
+  50% {
+    text-shadow: 0 0 20px #00ffe7, 0 0 40px #0ff, 0 0 80px #00ffe7;
+  }
+  100% {
+    text-shadow: 0 0 10px #00ffe7, 0 0 20px #00ffe7, 0 0 40px #0ff;
+  }
+}
+
+/* Floating animation for heading */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
