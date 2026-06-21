@@ -479,8 +479,8 @@ const TerminalMode: React.FC = () => {
         addLine("📄 Initiating resume download...", "info");
         setTimeout(() => {
           const link = document.createElement("a");
-          link.href = "/Utkarsh_Resume.pdf";
-          link.download = "Utkarsh_Resume.pdf";
+          link.href = "/resume---.pdf";
+          link.download = "resume---.pdf";
           document.body.appendChild(link);
           link.click();
           document.body.removeChild(link);
